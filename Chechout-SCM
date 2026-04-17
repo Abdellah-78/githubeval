@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Clean Workspace') {
             steps {
                 deleteDir()
@@ -11,19 +10,7 @@ pipeline {
 
         stage('Checkout SCM') {
             steps {
-                git branch: 'main', url: 'https://github.com/Abdellah-78/githubeval.git'
-            }
-        }
-
-        stage('Pull Nginx Image') {
-            steps {
-                sh 'sudo docker pull nginx'
-            }
-        }
-
-        stage('Check Image') {
-            steps {
-                sh 'sudo docker images'
+                git branch: 'main', url: 'https://github.com/Abdellah-78/githubeval/'
             }
         }
     }
